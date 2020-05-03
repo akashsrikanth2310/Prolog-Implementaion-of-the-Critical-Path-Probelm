@@ -1,0 +1,16 @@
+isitA(webster,dictionary).
+isitA(johnston,dictionary).
+isitA(oed,dictionary).
+isitA(dictionary,nonfiction).
+isitA(fLoorwaltersaltyeast,cookbook).
+isitA(cookbook,nonfiction).
+isitA(guide,novel).
+isitA(michaelstrogoff,fiction).
+isitA(novel,fiction).
+isitA(fiction,books).
+isitA(nonfiction,books).
+relation(X,Y):-
+    isitA(X,Y).
+relation(X,Y):-
+    isitA(X,Z),
+    relation(Z,Y).

@@ -1,0 +1,29 @@
+isitA(webster,dictionary).
+isitA(johnston,dictionary).
+isitA(oed,dictionary).
+isitA(dictionary,nonfiction).
+isitA(fLoorwaltersaltyeast,cookbook).
+isitA(cookbook,nonfiction).
+isitA(guide,novel).
+isitA(michaelstrogoff,fiction).
+isitA(novel,fiction).
+isitA(fiction,books).
+isitA(nonfiction,books).
+relation(X,Y):-
+    isitA(X,Y).
+relation(X,Y):-
+    isitA(X,Z),
+    relation(Z,Y).
+has(book,editor).
+has(fiction,author).
+writtenby(webster,noah).
+writtenby(johnston,samuel).
+writtenby(michaelstrogoff,jules).
+writtenby(guide,rk).
+agreeable(webster,johnston).
+agreeable(johnston,webster).
+agreeable(johnston,oed).
+volumess(oed,20).
+volumess(X,1):-	
+	not(X = oed),
+    relation(X,books).
